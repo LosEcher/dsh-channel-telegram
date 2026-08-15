@@ -12,10 +12,10 @@
 #      to learn it). Empty allowlist = deny all chats.
 - insert:
     - id: channel-telegram
-      name: /Users/echerlos/syncthing/project/dsfolder/dsh-channel-telegram/index.mjs
+      name: dsh-channel-telegram
       config:
         tokenEnv: TELEGRAM_BOT_TOKEN
-        allowlist: [123456789]
+        allowlist: []                     # 你的私聊 id；空 = 拒绝所有聊天
         # workspace: /absolute/path/to/dedicated/dir   # optional
         # provider: los-gateway                        # optional agent route
         # model: deepseek                              # optional model on route

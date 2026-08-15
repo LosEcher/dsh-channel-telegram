@@ -1,5 +1,5 @@
 # dsh-channel-telegram bundle patch.
-# Install:  dsh plugin --profile web add link:/path/to/dsh-channel-telegram
+# Install:  dsh plugin --profile web add github:LosEcher/dsh-channel-telegram#main
 # Prerequisites: TELEGRAM_BOT_TOKEN in the dsh process env; allowlist of
 # real chat ids (empty = deny all). Override allowlist via id-targeted
 # config in the user patch layer.
@@ -8,7 +8,7 @@
       name: dsh-channel-telegram
       config:
         tokenEnv: TELEGRAM_BOT_TOKEN
-        allowlist: [123456789]
+        allowlist: []                      # 空 = 拒绝所有聊天；填你的 chat id
         # workspace: /absolute/path/to/dedicated/dir   # optional
         # provider: los-gateway                        # optional agent route
         # model: deepseek                              # optional model on route

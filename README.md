@@ -23,14 +23,18 @@ Telegram **薄桥**插件：把 DSH 的 agent 通过 Telegram Bot 暴露出来�
 ```yaml
 - insert:
     - id: channel-telegram
-      name: /Users/echerlos/syncthing/project/dsfolder/dsh-channel-telegram/index.mjs
+      name: dsh-channel-telegram          # bundle 安装后按包名解析
       config:
         tokenEnv: TELEGRAM_BOT_TOKEN
-        allowlist: [123456789]          # 你的私聊 id
-        # workspace: /abs/path          # 可选，agent 会话 cwd（默认 ~/.dsh-telegram/workspace）
-        # provider: los-gateway         # 可选：agent 走的 provider 路由（比如上一轮配的 los 网关）
-        # model: deepseek               # 可选：该路由上的模型
+        allowlist: [123456789]            # 你的私聊 id
+        # workspace: /abs/path            # 可选，agent 会话 cwd（默认 ~/.dsh-telegram/workspace）
+        # provider: los-gateway           # 可选：agent 走的 provider 路由（比如上一轮配的 los 网关）
+        # model: deepseek                 # 可选：该路由上的模型
 ```
+
+本地开发（未安装 bundle、直接引用源码）时把 `name` 换成
+`/absolute/path/to/dsh-channel-telegram/index.mjs`（DSH Host loader 支持
+绝对路径插件 entry）。
 
 ## 行为
 
