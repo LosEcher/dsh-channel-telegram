@@ -1,0 +1,21 @@
+# Opt-in overlay: Telegram thin bridge for DSH.
+#
+# Enable by merging this `insert` into the user patch layer:
+#   $DSH_HOME/cordis.patch.yml   (every profile)  or
+#   $DSH_HOME/profiles/<name>/cordis.patch.yml    (one profile)
+# then restart `dsh web` (new host plugins load at boot).
+#
+# Prerequisites:
+#   1. Bot token from @BotFather, exported in the dsh process env as
+#      TELEGRAM_BOT_TOKEN (or change `tokenEnv` below).
+#   2. Your Telegram private chat id in `allowlist` (message @userinfobot
+#      to learn it). Empty allowlist = deny all chats.
+- insert:
+    - id: channel-telegram
+      name: /Users/echerlos/syncthing/project/dsfolder/dsh-channel-telegram/index.mjs
+      config:
+        tokenEnv: TELEGRAM_BOT_TOKEN
+        allowlist: [123456789]
+        # workspace: /absolute/path/to/dedicated/dir   # optional
+        # provider: los-gateway                        # optional agent route
+        # model: deepseek                              # optional model on route
