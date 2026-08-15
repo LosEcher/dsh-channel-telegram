@@ -1,6 +1,6 @@
 {
   "name": "dsh-channel-telegram",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "DSH bundle: thin Telegram bridge (long-poll Bot API, allowlist, per-chat agent sessions).",
   "repository": {
     "type": "git",
